@@ -2,6 +2,7 @@ package es.pjmartos;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class GameOfLifeTest {
@@ -13,4 +14,10 @@ public class GameOfLifeTest {
         assertTrue(aliveCell);
     }
 
+    @Test
+    public void aDeadCellShouldExist() {
+        boolean deadCell = !true;
+
+        assertFalse(deadCell);
+    }
 }
