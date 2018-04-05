@@ -9,15 +9,19 @@ public class GameOfLifeTest {
 
     @Test
     public void anAliveCellShouldExist() {
-        boolean aliveCell = true;
+        boolean aliveCell = aliveCell();
 
         assertTrue(aliveCell);
     }
 
     @Test
     public void aDeadCellShouldExist() {
-        boolean deadCell = !true;
+        boolean deadCell = !aliveCell();
 
         assertFalse(deadCell);
+    }
+
+    private static boolean aliveCell() {
+        return true;
     }
 }
