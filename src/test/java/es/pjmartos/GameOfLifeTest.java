@@ -53,11 +53,19 @@ public class GameOfLifeTest {
         assertTrue(shouldRemainAlive(cellStatus, aliveNeighbours));
     }
 
+    @Test
+    public void anAliveCellWithFourAliveNeighboursShouldDieFromOverPopulationInNextGeneration() {
+        boolean cellStatus = aliveCell();
+        int aliveNeighbours = 4;
+
+        assertFalse(shouldRemainAlive(cellStatus, aliveNeighbours));
+    }
+
     private static boolean aliveCell() {
         return true;
     }
 
     private static boolean shouldRemainAlive(boolean cellStatus, int aliveNeighbours) {
-        return cellStatus || aliveNeighbours == 3;
+        return aliveNeighbours != 4 && (cellStatus || aliveNeighbours == 3);
     }
 }
