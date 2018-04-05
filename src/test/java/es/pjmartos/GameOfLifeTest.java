@@ -22,22 +22,24 @@ public class GameOfLifeTest {
     }
 
     @Test
-    public void anAliveCellWithThreeAliveNeighboursShouldSurviveToNextGeneration() {
-        boolean aliveCell = aliveCell();
-        int aliveNeighbours = 3;
+    public void anAliveCellWithTwoAliveNeighboursShouldSurviveToNextGeneration() {
+        int aliveNeighbours = 2;
 
-        assertTrue(aliveCell && aliveNeighbours == 3);
+        assertTrue(shouldRemainAlive(aliveNeighbours));
     }
 
     @Test
-    public void anAliveCellWithTwoAliveNeighboursShouldSurviveToNextGeneration() {
-        boolean aliveCell = aliveCell();
-        int aliveNeighbours = 2;
+    public void anAliveCellWithThreeAliveNeighboursShouldSurviveToNextGeneration() {
+        int aliveNeighbours = 3;
 
-        assertTrue(aliveCell && aliveNeighbours == 2);
+        assertTrue(shouldRemainAlive(aliveNeighbours));
     }
 
     private static boolean aliveCell() {
         return true;
+    }
+
+    private static boolean shouldRemainAlive(int aliveNeighbours) {
+        return aliveNeighbours >= 2;
     }
 }
