@@ -29,6 +29,14 @@ public class GameOfLifeTest {
         assertTrue(aliveCell && aliveNeighbours == 3);
     }
 
+    @Test
+    public void anAliveCellWithTwoAliveNeighboursShouldSurviveToNextGeneration() {
+        boolean aliveCell = aliveCell();
+        int aliveNeighbours = 2;
+
+        assertTrue(aliveCell && aliveNeighbours == 2);
+    }
+
     private static boolean aliveCell() {
         return true;
     }
