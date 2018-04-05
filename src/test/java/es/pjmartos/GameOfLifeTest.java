@@ -74,6 +74,6 @@ public class GameOfLifeTest {
     }
 
     private static boolean shouldRemainAlive(boolean cellStatus, int aliveNeighbours) {
-        return (aliveNeighbours != 4 && aliveNeighbours != 1) && (cellStatus || aliveNeighbours == 3);
+        return aliveNeighbours == 3 || cellStatus && aliveNeighbours == 2;
     }
 }
